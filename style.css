@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#image-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the entire container */
+    z-index: -1;
+}
+
+#calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    max-width: 400px;
+    margin: auto; /* Updated to center the calculator horizontally */
+    margin-top: auto; /* Updated to center the calculator vertically */
+    margin-bottom: auto; /* Updated to center the calculator vertically */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#display {
+    grid-column: span 4;
+    text-align: right;
+    padding: 10px;
+    font-size: 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.operator,
+.clear,
+.equal,
+.backspace,
+.scientific-mode,
+.scientific-function {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.operator:hover,
+.clear:hover,
+.equal:hover,
+.backspace:hover,
+.scientific-mode:hover,
+.scientific-function:hover {
+    background-color: #45a049;
+}
+
+.scientific-function {
+    grid-column: span 2;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #calculator {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.scientific-function.hidden {
+    display: inline-block; /* or any other appropriate display value */
+}
